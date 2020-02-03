@@ -1,6 +1,3 @@
-#---------------------------------------------------------------
-# application related
-#---------------------------------------------------------------
 variable "application" {
   description = "The name of the application"
   default     = "sonarqube"
@@ -15,10 +12,6 @@ variable "common_tags" {
   description = "A map of general tags applied to all resources"
   default     = {}
 }
-
-#---------------------------------------------------------------
-# network related
-#---------------------------------------------------------------
 
 variable "region" {
   description = "The AWS Region where the container will be deployed"
@@ -36,10 +29,6 @@ variable "subnet_ids" {
   description = "List of Private Subnets IDs"
 }
 
-#---------------------------------------------------------------
-# ecs related
-#---------------------------------------------------------------
-
 variable "cluster_name" {
   description = "The name of the ECS cluster"
   default     = "sonarqube"
@@ -55,9 +44,6 @@ variable "sonarqube_logdir" {
   default     = "/var/log/sonarqube"
 }
 
-#---------------------------------------------------------------
-# database related
-#---------------------------------------------------------------
 variable "db_user" {
   description = "The name of the root user for the database"
   default     = "sonarqube"
@@ -164,10 +150,6 @@ variable "db_storage_type" {
 }
 
 
-#---------------------------------------------------------------
-# asg related
-#---------------------------------------------------------------
-
 variable "asg_prefix" {
   description = "The prefix to use for the auto-scaling group"
   default     = "sqb"
@@ -202,10 +184,6 @@ variable "asg_ami_owner" {
   description = "The owner of the AMI"
   default     = "amazon"
 }
-
-#---------------------------------------------------------------
-# lb related
-#---------------------------------------------------------------
 
 variable "lb_cert_domain" {
   description = "The domain that is represented by the ACM certificate we are using"
